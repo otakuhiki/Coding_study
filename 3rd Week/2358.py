@@ -1,3 +1,5 @@
+#시간초과 : 완전탐색 이외의 방법 생각해보기
+
 import sys
 input = sys.stdin.readline
 
