@@ -1,49 +1,25 @@
-#왜인지 모르겠는데 자꾸 틀린다...
 import sys
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
-cd_n = []
-cd_m = []
-
-for _ in range(n):
-    cd_n.append(int(input()))
-for _ in range(m):
-    cd_m.append(int(input()))
-    if len(cd_m) == m:
-       end1, end2 = map(int, input().split())
-
-print(cd_n, cd_m)
-
-n_idx = 0
-m_idx = 0
-cnt = 0
-
-while(n_idx != n):
-    check = cd_n[n_idx]
-    if check in cd_m:
-        cnt+=1
-        n_idx +=1
-    else:
-        n_idx+=1
-
-# while(n_idx != n):
-#     check = cd_n[n_idx]
-#     if cd_m[m_idx] == check:
-#         #print(3)
-#         cnt+=1
-#         m_idx+=1
-#         if (m_idx == m): 
-#             n_idx+=1
-#             m_idx = 0 
-#             #print(4)
-#     else:
-#         #print(5)
-#         m_idx+=1
-#         if (m_idx == m): 
-#             n_idx+=1
-#             m_idx = 0
-#             #print(6)
-
-print(cnt)
-
+#key: cd의 번호, value; cd갯수
+while(1):
+    label = 0
+    cnt=0
+    cd={}
+    #여러개의 테스트 케이스가 반복해서 입력됨
+    #최종적으로 0 0 이 입력되면 종료
+    n, m = map(int, input().split())
+    if (n == 0 and m ==0): break
+    for i in range(0, n+m):
+        label = int(input())
+        #첫번째 cd는 무조건 dict에 입력
+        if (i==0):
+            cd[label]=1
+        else:
+            #겹치는 cd갯수만을 카운트
+            if label in cd:
+                cd[label]=2
+                cnt+=1
+            else:
+                cd[label]=1           
+    print(cnt)
