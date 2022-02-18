@@ -6,7 +6,6 @@ out = [] #출력할 이름을 담는 list
 
 n= int(input())
 
-#듣도 못한 사람의 name은 무조건 dict에 입력
 for i in range(0, n):
     title = input().strip()
     if (i==0):
