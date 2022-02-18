@@ -8,7 +8,7 @@ n= int(input())
 
 for i in range(0, n):
     title = input().strip()
-    if (i==0):
+    if (i==0): #첫 번째 입력되는 책은 무조건 dict에 입력
         book[title]=1
     else:
         #겹치는 book갯수를 카운트
